@@ -26,5 +26,5 @@ static ofstream out_stream;
 
 int read_pla_file(const char*, int, int*, int**, int**);
 int read_real_file(int, int*, int**&, int**&);
-int read_input_file(char**, int&, int&, int*, int**&, int**&, int**&, int**&);
+int read_input_file(char**, int&, int&, int*, int**&, int**&, int**&, int**&, int*);
 int print_out_array(int, int, int**);

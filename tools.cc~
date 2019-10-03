@@ -192,7 +192,7 @@ int read_pla_file(int input_counter, int *inout, int **inputcubes, int **outputc
 	return 1;
 }
 
-int read_input_file(char **argv,int &input_counter, int &quantum_swap_counter, int *inout, int **&inputcubes, int **&outputcubes, int **&inputcubes_for_process, int **&outputcubes_for_process){
+int read_input_file(char **argv,int &input_counter, int &quantum_swap_counter, int *inout, int **&inputcubes, int **&outputcubes, int **&inputcubes_for_process, int **&outputcubes_for_process, int *result){
 	string line;
 if (argv[2] == 0){
 		in_stream.open(argv[1]);	
