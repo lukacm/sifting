@@ -1112,7 +1112,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 */
 	reorder_Real(wirearray, y, comp_count, gate_sims, distances);
 	}
-	cout<<"---------------------------"<<endl;
+//	cout<<"---------------------------"<<endl;
 
 	for(int o =0; o < inout[0]; o++){ 
 		for(int u =0; u < input_counter; u++){
@@ -1122,7 +1122,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 
 
 	//function representation output
-	cout<<"Final------------------"<<endl;
+/*	cout<<"Final------------------"<<endl;
 	for(int o =0; o < inout[0]; o++){ 
 		for(int u =0; u < input_counter; u++){
 			cout<<reorder_array[o][u]<<", ";
@@ -1130,7 +1130,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 		cout<<endl;
 	}
 	cout<<"---------------------------"<<endl;
-
+*/
 
 	//calculate the QWS once for all QWSs
 	for(int o =0; o < inout[0]; o++){ 
@@ -1139,11 +1139,11 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 			if (reorder_array[o][u]> 0) qws[o]++;
 		}
 	}
-	for (int p = 0; p < inout[0]; p++){
+/*	for (int p = 0; p < inout[0]; p++){
 		cout<<" wire/cost: "<<(*var_order)[p]<<"/"<<qws[p];
 	}
 	cout<<endl;
-	int sum = 0;
+*/	int sum = 0;
 	int cost = 0;
 	int best_cost = 0;
 	int best_idx = 1;
@@ -1171,7 +1171,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 */
 	}
 	
-	cout<<" Final Cost: "<<sum<<endl;
+//	cout<<" Final Cost: "<<sum<<endl;
 //	exit(0);
 /*
 //	cout<<"MCCs:\n";
@@ -1282,14 +1282,14 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 			}		
 		}
 		//function representation output
-		cout<<"3--------------------------"<<endl;
+/*		cout<<"3--------------------------"<<endl;
 		for(int o =0; o < inout[0]; o++){ 
 			for(int u =0; u < input_counter; u++){
 				cout<<reorder_array[o][u]<<", ";
 			}
 			cout<<endl;
 		}
-
+*/
 		//recalculate the cost in SWAP gates based on minimal cost w.r.t to cheapest movements
 		sum = 0;
 		for(int u = 0; u<input_counter; u++){
@@ -1409,7 +1409,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 	}
 
 	//function representation output
-	cout<<"Best----------------------"<<endl;
+/*	cout<<"Best----------------------"<<endl;
 	for(int o =0; o < inout[0]; o++){ 
 		for(int u =0; u < input_counter; u++){
 			cout<<wirearray[u][o]<<", ";
@@ -1417,7 +1417,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 		cout<<endl;
 	}
 	cout<<"---------------------------"<<endl;
-/*	//function representation output
+*//*	//function representation output
 	cout<<"R--------------------------"<<endl;
 	for(int o =0; o < inout[0]; o++){ 
 		for(int u =0; u < input_counter; u++){
@@ -1426,7 +1426,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 		cout<<endl;
 	}
 */
-	cout<<"---------------------------"<<endl;
+/*	cout<<"---------------------------"<<endl;
 
 	cout<<" Best Sum: "<<bestsum<<endl;
 	cout<<" Best order: ";
@@ -1434,7 +1434,7 @@ void sift_pla3(int full, int input_counter, int *inout, int **inputcubes, int **
 		cout<<best_var_order[i]<<", ";
 	cout<<endl;
 	cout<<"---------------------------"<<endl;
-
+*/
 //	exit(0);
 	result[0] = bestsum;
 }
@@ -3200,7 +3200,7 @@ int main(int argc, char *argv[]){
 	/**Read either a PLA or a Real file**/
 //	cout<<"Inout1: "<< inout[0]<< " Input counter: "<<input_counter<<" Input Cubes: "<<inputcubes<<"  "<<endl;
 	read_input_file(argv, input_counter, quantum_swap_counter, inout, inputcubes, outputcubes, inputcubes_for_process, outputcubes_for_process);
-	cout<<"Swap Cost:" <<  quantum_swap_counter<<endl;
+//	cout<<"Swap Cost:" <<  quantum_swap_counter<<endl;
 //	cout<<"Inout2: "<< inout[0]<< " Input counter: "<<input_counter<<" Input Cubes: "<<inputcubes<<" "<<inputcubes[0][0]<<endl;
 //print_out_array(inout[0], input_counter, inputcubes);
 
@@ -3219,7 +3219,7 @@ int main(int argc, char *argv[]){
 		best_order[y] = variable_order[y];
 	}
 
-	cout<<"Function name: "<<argv[1]<<endl;
+//	cout<<"Function name: "<<argv[1]<<endl;
 	/**test for various input variable permutations**/
 	for (int a = 0; a <1; a++){
 //for (int a = 0; a <input_counter*inout[0]; a++){
@@ -3268,7 +3268,7 @@ cout<<" input data "<<endl;
 			sift_pla3(0, input_counter, inout, inputcubes_for_process, outputcubes_for_process, &variable_order, result, true);
 		}
 
-		cout<<" out "<<endl;
+//		cout<<" out "<<endl;
 		if (cost < best_cost){
 			best_cost = result[0];
 			best_threebit = result[1];

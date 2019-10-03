@@ -13,7 +13,7 @@ int read_real_file(int input_counter, int *inout, int **&inputcubes, int **&outp
 	bool readd;
 	bool found;
 	char var[10];
-	cout<<input_counter<<" Real inputs detected: "<<readd<<endl;
+//	cout<<input_counter<<" Real inputs detected: "<<readd<<endl;
 	while(line[0] != '.'){
 		getline(in_stream,line);
 	}
@@ -29,10 +29,10 @@ int read_real_file(int input_counter, int *inout, int **&inputcubes, int **&outp
 			while(line[k] != ' ') k++;
 			k++;
 //	cout<<"Inout: "<< inout[0]<< " Input counter: "<<input_counter<<" Input Cubes: "<<inputcubes<<endl;
-	cout<<"Inout: "<< inout[0]<< " Input counter: "<<input_counter<<" Input Cubes: "<<inputcubes<<endl;
+//	cout<<"Inout: "<< inout[0]<< " Input counter: "<<input_counter<<" Input Cubes: "<<inputcubes<<endl;
 			while(line[k] != '\0') num += line[k++];
 			in = atoi(num.c_str());
-			cout <<"in: "<< in<<"  variables"<<endl;
+//			cout <<"in: "<< in<<"  variables"<<endl;
 			inout[0] = in;
 			inout[1] = in;
 			for (int y = 0; y < input_counter; y++){
@@ -134,7 +134,7 @@ int read_real_file(int input_counter, int *inout, int **&inputcubes, int **&outp
 		}
 		getline(in_stream,line);
 	}
-		cout<<"Icounter: "<<incounter<<endl;
+//		cout<<"Icounter: "<<incounter<<endl;
 	return ctrl_sum;
 }
 
